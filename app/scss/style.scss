@@ -1,9 +1,269 @@
 @import "vars";
 @import "libs";
 @import "fonts";
+@import "general";
 
 
+// BEGIN HEADER
+.header {
+    padding: 12px 54px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header__logo {
+    padding-right: 116px;
+}
+
+.header__navigation {
+    flex-grow: 1;
+}
+
+.header__list {
+    display: flex;
+    height: 22px;
+
+}
+
+.header__list-item+.header__list-item {
+    margin-left: 40px;
+}
+
+.header__list-item {
+    .link {
+        font-family: $font-nav-link;
+        font-size: 15px;
+        line-height: 18px;
+        color: $color-text-main;
+    }
+
+}
+
+.block-user {
+    position: absolute;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.14);
+    border-radius: 3px;
+    top: 85px;
+    right: 54px;
+    width: 276px;
+    height: 265px;
+    background-color: $bg-body;
+}
+
+.categories-block {
+    position: absolute;
+    left: 54px;
+    right: 54px;
+    top: 161px;
+    background-color: $bg-body;
+    height: 283px;
+    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+// END HEADER
+// BEGIN SECTION PROJECTS
+.projects {
+    padding: 0 54px 46px;
+}
+
+.projects__search-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0;
+    padding: 9px 0 14px 0;
+    border-top: 1px solid $border-search;
+    border-bottom: 1px solid $border-search;
+}
+
+.projects__input-search-wrapper {
+    position: relative;
+    margin-right: 11px;
+
+    .icon-search {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+    }
+}
+
+.projects__search-form {
+    display: flex;
+}
+
+.projects__input-search {
+    background: transparent;
+    padding: 10px 24px 8px 12px;
+    background-color: $bg-input-search;
+    width: 455px;
+    font-size: 18px;
+    line-height: 21px;
+    font-family: $font-main;
+    letter-spacing: -0.03em;
+    color: $input-search-text;
+}
+
+.projects__form-button {
+    border-radius: 4px;
+    background: $color-neutral;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.03em;
+    color: $form-search-btn;
+    display: flex;
+    align-items: center;
+    padding: 10px 21px 10px 24px;
+
+    svg {
+        margin-left: 12px;
+    }
+}
+
+.projects__filters-list {
+    display: flex;
+
+}
+
+.projects__filters-item.active {
+    color: $color-neutral;
+}
+
+.projects__filters-item+.projects__filters-item {
+    margin-left: 27px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.03em;
+    font-family: $font-main-medium;
+}
+
+.projects__wrapper-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.projects__box {
+    max-width: 423px;
+    max-height: 574px;
+    border-radius: 3px;
+    box-shadow: 0px 4px 18px #E5E5E5;
+    margin-bottom: 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projects__box-wrapper {
+    padding: 29px 25px 21px 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.projects__box-img {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.projects__box-title {
+    font-family: $font-main-bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: $color-text-main;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.projects__box-text {
+    font-size: 18px;
+    line-height: 156.7%;
+    color: $color-text-main-light;
+    margin-bottom: 25px;
+    max-height: 85px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projects__box-company {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.box-company__log {
+    margin-right: 3px;
+}
+
+.box-company__title {
+    line-height: 19px;
+    font-size: 16px;
+}
+
+.box-company__location {
+    font-size: 13px;
+    line-height: 16px;
+    color: $color-text-second;
+}
+
+.projects__box-bar {
+    position: relative;
+    background: $bg-bar;
+    width: 100%;
+    height: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.project__box-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 86%;
+    background: $color-neutral;
+    border-radius: 10px;
+}
+
+.projects__box-info {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.box-info__box-title {
+    font-size: 14px;
+    line-height: 137.7%;
+    color: $color-text-second;
+}
+
+.box-info__box-price {
+    font-size: 26px;
+    line-height: 137.7%;
+    font-family: $font-main-bold;
+}
+
+.box-info__box {
+    width: 30%;
+}
+
+.funded {
+    .box-info__box-price {
+        display: flex;
+        justify-content: start;
+    }
+}
 
 
+// END SECTION PROJECTS
 
 @import "media";
