@@ -8,12 +8,103 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+  <!-- BEGIN HEADER-->
   <header class='header'>
+    <!-- Header logo -->
       <header class="logo">
         <img src="img/svg/logo.svg" alt="logo">
       </header>
-      
+      <!-- Header Nav -->
+      <nav class='header__navigation'>
+        <ul class="header__list">
+          <li class="header__list-item"><a href="#" class="link">Raise money for..</a></li>
+          <li class="header__list-item"><a href="#" class="link">Take a tour </a></li>
+          <li class="header__list-item"><a href="#" class="link">Pricing</a></li>
+          <li class="header__list-item"><a href="#" class="link">Projects</a></li>
+          <li class="header__list-item"><a href="#" class="link">Categories</a></li>
+        </ul>
+      </nav>
+      <!-- Header User -->
+      <div class="header__user">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="26" cy="26" r="26" fill="#E1E6FF"/>
+          <path d="M35.2549 28.9653C34.5258 28.3247 33.6416 27.7711 32.6266 27.3201C32.1927 27.1274 31.685 27.3228 31.4923 27.7565C31.2996 28.1902 31.495 28.698 31.9287 28.8908C32.7845 29.2712 33.522 29.7306 34.1204 30.2564C34.8581 30.9046 35.2812 31.8432 35.2812 32.832V34.4219C35.2812 34.8957 34.8957 35.2812 34.4219 35.2812H17.5781C17.1043 35.2812 16.7188 34.8957 16.7188 34.4219V32.832C16.7188 31.8432 17.1419 30.9046 17.8796 30.2564C18.7478 29.4934 21.2776 27.7188 26 27.7188C29.5065 27.7188 32.3594 24.8659 32.3594 21.3594C32.3594 17.8529 29.5065 15 26 15C22.4935 15 19.6406 17.8529 19.6406 21.3594C19.6406 23.4093 20.6158 25.2355 22.1264 26.3991C19.3623 27.0067 17.6429 28.1763 16.7451 28.9653C15.6361 29.9397 15 31.3489 15 32.832V34.4219C15 35.8435 16.1565 37 17.5781 37H34.4219C35.8435 37 37 35.8435 37 34.4219V32.832C37 31.3489 36.3639 29.9397 35.2549 28.9653ZM21.3594 21.3594C21.3594 18.8006 23.4412 16.7188 26 16.7188C28.5588 16.7188 30.6406 18.8006 30.6406 21.3594C30.6406 23.9182 28.5588 26 26 26C23.4412 26 21.3594 23.9182 21.3594 21.3594Z" fill="#4640DE"/>
+        </svg>
+      </div>
   </header>
+  <!-- END HEADER-->
+  <main class="main">
+    <!-- BEGIN SECTION PROJECTS -->
+    <section class="projects">
+      <!-- Projects Search -->
+      <div class="projects__search-wrapper">
+        <form>
+          <input type="search" name="search" placeholder="Search for projects" class="projects__input-search">
+          <button type="submit"></button>
+        </form>
+      </div>
+      <!-- Projects Filters -->
+      <div class="projects__filters">
+        <ul class="projects__filters-list">
+          <li class="projects__filters-item active">Popular</li>
+          <li class="projects__filters-item">Recent</li>
+          <li class="projects__filters-item">Most funded</li>
+        </ul>
+      </div>
+      <div class="projects__wrapper-box">
+        <!-- Projects Box -->
+        <div class="projects__box">
+          <div class="projects__box-img">
+            <img src="img/img-project1.jpg" alt="">
+          </div>
+          <div class="projects__box-wrapper">
+            <!-- Projects Box Text  -->
+            <div class="projects__box-text">
+              <h2 class="projects__box-title">PrinCube-The World's Smallest</h2>
+              <p class="projects__box-text">The project team has begun turning their prototype into the final product. Their ability to ship the products may be affected by product..</p>
+            </div>
+            <!-- Projects Box Company  -->
+            <div class="projects__box-company">
+              <!-- Projects Box Company Logo -->
+              <div class="box-company__log"></div>
+              <!-- Projects Box Company Text -->
+              <div class="box-company__text-wrapper">
+                <h3 class="box-company__title">Rockers Technology</h3>
+                <p class="box-company__location">Chicago, IL</p>
+              </div>
+            </div>
+            <!-- Projects Box Bar -->
+            <div class="projects__box-bar">
+              <div class="project__box-progress-bar"></div>
+            </div>
+            <!-- Projects Box Info -->
+            <div class="projects__box-info">
+              <!-- Projects Box Funded -->
+              <div class="box-info__box funded">
+                <h4 class="box-info__box-title">funded</h4>
+                <p class='box-info__box-price'>$<span class="funded-price">2,348</span></p>
+              </div>
+              <!-- Projects Box Goal -->
+              <div class="box-info__box goal">
+                <h4 class="box-info__box-title">Goal</h4>
+                <p class='box-info__box-price'>$<span class="goal-price">32,800</span></p>
+              </div>
+              <!-- Projects Box Days Left -->
+              <div class="box-info__box days-left">
+                <h4 class="box-info__box-title">days left</h4>
+                <p class='box-info__box-price'><span class="days-left">6</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Projects Box End-->
+      </div>
+    </section>
+    <!-- END SECTION PROJECTS -->
+  </main>
+
+  
+  
   
   
   <script src="js/libs.min.js"></script>
