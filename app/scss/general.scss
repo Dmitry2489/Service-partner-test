@@ -34,6 +34,7 @@ li {
 
 li {
     list-style: none;
+    cursor: pointer;
 }
 
 a {
@@ -51,11 +52,18 @@ input {
     outline: none;
 }
 
+
+
 :active,
 :hover,
 :focus {
     outline: 0;
     outline-offset: 0;
+
+}
+input:focus{
+    background: #FFFFFF;
+    border: 1px solid #646464;
 }
 
 input[type='search']::-webkit-search-decoration,
@@ -63,4 +71,21 @@ input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-results-button,
 input[type='search']::-webkit-search-results-decoration {
     display: none;
+}
+
+.btn {
+    border-radius: 4px;
+    background: $color-neutral;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.03em;
+    color: $form-search-btn;
+    display: flex;
+    align-items: center;
+    padding: 10px 21px 10px 24px;
+    transition: ease-in 0.3s;
+
+    &:hover {
+        background: #6C66FF;
+    }
 }

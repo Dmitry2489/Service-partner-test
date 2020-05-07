@@ -1,5 +1,4 @@
 @import "vars";
-@import "libs";
 @import "fonts";
 @import "general";
 
@@ -42,6 +41,31 @@
 
 }
 
+.header__user {
+    cursor: pointer;
+}
+
+// Header Btn Menu
+.header__btn-menu {
+    width: 44px;
+    height: 11px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    div {
+        height: 3px;
+        width: 100%;
+        background-color: $color-text-second;
+    }
+
+    div+div {
+        margin-top: 6px;
+    }
+}
+
+// Block User
 .block-user {
     position: absolute;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.14);
@@ -50,11 +74,36 @@
     right: 54px;
     width: 276px;
     background-color: $bg-body;
+    display: none;
+    z-index: 2;
+    transition: ease-in 0.3;
+    // animation: howBlock ease-in 0.3s forwards;
+    // animation: fadeIn ease-in 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes showBlock {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
 .user-info {
     padding: 17px 25px 20px 24px;
-    border: 1px solid $border-search;
     font-size: 18px;
     line-height: 21px;
 }
@@ -108,17 +157,6 @@
     color: $color-neutral;
 }
 
-.categories-block {
-    display: none;
-    position: absolute;
-    left: 54px;
-    right: 54px;
-    top: 161px;
-    background-color: $bg-body;
-    height: 283px;
-    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-}
 
 // END HEADER
 // BEGIN SECTION PROJECTS
@@ -126,6 +164,7 @@
     padding: 0 54px 46px;
 }
 
+// Project search
 .projects__search-wrapper {
     display: flex;
     justify-content: space-between;
@@ -134,6 +173,7 @@
     padding: 9px 0 14px 0;
     border-top: 1px solid $border-search;
     border-bottom: 1px solid $border-search;
+    position: relative;
 }
 
 .projects__input-search-wrapper {
@@ -162,18 +202,22 @@
     font-family: $font-main;
     letter-spacing: -0.03em;
     color: $input-search-text;
+    transition: ease-in 0.3s;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+        background: #EAEAEA;
+    }
+
+    &:active {
+        background: #FFFFFF;
+        border: 1px solid #646464;
+    }
 }
 
 .projects__form-button {
-    border-radius: 4px;
-    background: $color-neutral;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.03em;
-    color: $form-search-btn;
-    display: flex;
-    align-items: center;
-    padding: 10px 21px 10px 24px;
 
     svg {
         margin-left: 12px;
@@ -197,6 +241,71 @@
     font-family: $font-main-medium;
 }
 
+// Bock  Categories
+.categories-block {
+    display: none;
+    position: absolute;
+    top: 63px;
+    background-color: $bg-body;
+    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 23px 25px 32px 26px;
+    z-index: 1;
+}
+
+.categories-block__title {
+    font-family: $font-main-medium;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    margin-bottom: 17px;
+}
+
+.categories__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.categories__item+.categories__item {
+    margin-left: 7px;
+}
+
+.categories__item {
+    font-family: $font-main-medium;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 15px 18px 14px 18px;
+    background: $bg-body;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-right: 6px;
+    }
+
+}
+
+.categories__item.active {
+    color: $color-neutral;
+    border: 1px solid #4640DE;
+}
+
+.categories__btn-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.categories__btn {
+    padding: 10px 45px 11px 45px;
+}
+
+//End Block  Categories
 .projects__wrapper-box {
     display: flex;
     flex-wrap: wrap;
@@ -204,6 +313,188 @@
 
 }
 
+// Select Block Categories
+select {
+    width: 100%;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px 0 10px 12px;
+    line-height: 19px;
+    letter-spacing: -0.03em;
+    color: $input-search-text;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    option {
+        font-size: 14px;
+        line-height: 17px;
+        color: #171F2E;
+        display: flex;
+    }
+}
+
+.select-box {
+    position: relative;
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #60666d;
+
+
+    @media (min-width: 768px) {
+        width: 70%;
+    }
+
+    @media (min-width: 992px) {
+        width: 50%;
+    }
+
+    @media (min-width: 1200px) {
+        width: 30%;
+    }
+
+    &__current {
+        width: 100%;
+        border: 1px solid #D8D8D8;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding: 10px 0 10px 12px;
+
+        position: relative;
+        cursor: pointer;
+        outline: none;
+
+        &:focus {
+            &+.select-box__list {
+                opacity: 1;
+
+
+                // We have to set "animation-name: none;" to make the list visible (read below how it works)
+
+                animation-name: none;
+
+                .select-box__option {
+                    cursor: pointer;
+                }
+            }
+
+            .select-box__icon {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 10px;
+        height: 10px;
+        opacity: 0.3;
+        transition: 0.2s ease;
+    }
+
+    &__value {
+        display: flex;
+    }
+
+    &__input {
+        display: none;
+
+        &:checked+.select-box__input-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: -0.03em;
+            color: $input-search-text;
+            font-family: $font-main;
+        }
+    }
+
+    &__input-text {
+        display: none;
+        width: 100%;
+        margin: 0;
+        // padding: 15px;
+        background-color: #fff;
+    }
+
+    &__list {
+        position: absolute;
+        width: 100%;
+        padding: 1px 16px 0 5px;
+
+        list-style: none;
+        opacity: 0;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.14);
+        top: 50px;
+        overflow-y: scroll;
+        max-height: 295px;
+
+        // We need to use animation with delay.
+        // Otherwise the click event will not have time to run on label, because this element disapears immediately when .select-box__current element loses the focus.
+        // This delay will not be noticed because we set "opacity" to "0".
+        // We also use "animation-fill-mode: forwards" to make the list stay hidden.
+
+        animation-name: HideList;
+        animation-duration: 0.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: step-start;
+        border-radius: 3px;
+    }
+
+    &__option {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px;
+        background-color: #fff;
+
+        &:hover,
+        &:focus {
+            color: #546c84;
+            background-color: #fbfbfb;
+        }
+    }
+}
+
+.select-box__option {
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #171F2E;
+}
+
+.counter-project {
+    font-family: $font-main-medium;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-neutral;
+}
+.categories__item-counter{
+    color: $color-neutral;
+    display: none;
+}
+@keyframes HideList {
+    from {
+        transform: scaleY(1);
+    }
+
+    to {
+        transform: scaleY(0);
+    }
+}
+
+.select-box__option {}
+
+//Select Block Categories End
+// Project box
 .projects__box {
     max-width: 423px;
     max-height: 574px;
@@ -213,6 +504,29 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: ease-in 0.3s;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 39px;
+        height: 39px;
+        background: url(../img/svg/icon-box-project.svg);
+        top: 25px;
+        right: 26px;
+        opacity: 0;
+        transition: ease-in 0.3s;
+        cursor: pointer;
+    }
+
+    &:hover {
+        box-shadow: 0px 3px 19px rgba(0, 0, 0, 0.11);
+    }
+
+    &:hover:after {
+        opacity: 1;
+    }
 }
 
 .projects__box-wrapper {
@@ -288,6 +602,7 @@
     width: 86%;
     background: $color-neutral;
     border-radius: 10px;
+    transition: ease-in 1s;
 }
 
 .projects__box-info {
@@ -319,6 +634,29 @@
     }
 }
 
+.bar-min {
+    width: 8%;
+}
+
+.showBlock {
+    display: block;
+    animation: fadeIn ease-in 0.3s forwards;
+}
+
+@keyframes showBlock {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.activeInput {
+    background: #FFFFFF;
+    border: 1px solid #646464;
+}
 
 // END SECTION PROJECTS
 
