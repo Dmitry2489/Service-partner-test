@@ -49,11 +49,67 @@
     top: 85px;
     right: 54px;
     width: 276px;
-    height: 265px;
     background-color: $bg-body;
 }
 
+.user-info {
+    padding: 17px 25px 20px 24px;
+    border: 1px solid $border-search;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.user-info__name {
+    font-weight: bold;
+    margin-bottom: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+.user-info__email {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.user__settings {
+    padding: 23px 22px 37px 24px;
+    font-size: 15px;
+    line-height: 18px;
+    font-family: $font-main-medium;
+    border: 1px solid $border-search;
+}
+
+.user__settings-favorite {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.028em;
+}
+
+.poroj-favorite__number {
+    color: $color-neutral;
+    font-weight: 600;
+}
+
+.user__settings-item+.user__settings-item {
+    margin-top: 22px;
+
+}
+
+.user__logout-block {
+    padding: 15px 14px;
+    text-align: center;
+    line-height: 150%;
+    letter-spacing: -0.03em;
+    color: $color-neutral;
+}
+
 .categories-block {
+    display: none;
     position: absolute;
     left: 54px;
     right: 54px;
